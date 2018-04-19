@@ -1,3 +1,12 @@
+This was the file from the aparrish code I edited for my bot. I deleted some irrelevant information. The rest is pretty helpful, but I think reading my comments in everywordbot.py and [this website](https://medium.com/science-friday-footnotes/how-to-make-a-twitter-bot-in-under-an-hour-259597558acf) will be more helpful.
+    
+DM me at [@jillresh](https://twitter.com/jillresh) if you have any trouble or questions. 
+
+Best of luck!
+-Jill
+
+
+
 Everyword Bot
 -------------
 
@@ -12,13 +21,7 @@ This is a small Python script that implements an [`@everyword`](http://twitter.c
 Instructions
 ------------
 
-Run the script from the command-line like so:
 
-	$ python everywordbot.py --consumer_key=<ckey> --consumer_secret=<csecret> \
-		  --access_token=<atoken> --token_secret=<tokensecret> \
-		  --source_file=<source> --index_file=<index>
-
-... where:
 
 * `<ckey>` is your Twitter consumer key;
 * `<csecret>` is your Twitter consumer secret;
@@ -27,12 +30,7 @@ Run the script from the command-line like so:
 * `<source>` is the filename of a plain text file, with one tweet per line (defaults to `tweet_list.txt` in the current directory); and
 * `<index>` is the name of a file where the script can store the current tweet index (i.e., which line in the file should be tweeted next). The script must be able to write to this file.
 
-You'll need to arrange to have this script run at some interval, using a tool
-like `cron`. For example, to post a tweet every half hour, you might put the
-command line above in a bash script named `/home/aparrish/post_tweet.sh` and
-then put the following in your crontab:
 
-	0,30 * * * * cd /home/aparrish; bash post_tweet.sh >>error.log 2>&1
 
 Production Notes
 ----------------
@@ -71,20 +69,7 @@ This is likely an anti-spam measure. Wait a few minutes and try again before
 freaking out.
 
 Creating your Twitter API application while logged in to your Twitter bot user
-account is the by far simplest method for obtaining credentials. However,
-you'll hit a wall quick if you want to run more than one bot, since Twitter
-requires an account to have an active telephone number attached to it in order
-to register new applications, and no two accounts can be associated with the
-same phone number. It's possible to swap a single phone number between
-accounts (by clearing it out on one account, and adding it to another), but you
-might find it easier to manage all of your applications from one account, and
-then have your bot accounts authenticate with those applications. [You can use
-this
-script](https://gist.github.com/moonmilk/035917e668872013c1bd#comment-1333900)
-(using tweepy) or [this
-script](https://github.com/simplegeo/python-oauth2#twitter-three-legged-oauth-example)
-(using the oauth2 library) to get the relevant credentials from Twitter on the
-command-line.
+account is the by far simplest method for obtaining credentials. 
 
 (The above information above may become inaccurate if Twitter changes their
 policies or the layout of their site.)
